@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Cleoh">
+  <defs>
+    <linearGradient id="cleoh" x1="0.05" y1="0.95" x2="0.95" y2="0.05">
+      <stop offset="0%" stop-color="#a94700" />
+      <stop offset="100%" stop-color="#5847b7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Three sources converging on one story. -->
+  <g fill="none" stroke="url(#cleoh)" stroke-width="34" stroke-linecap="round">
+    <path d="M112 148 C 214 148, 232 256, 322 256" />
+    <path d="M112 256 L 322 256" />
+    <path d="M112 364 C 214 364, 232 256, 322 256" />
+  </g>
+  <circle cx="368" cy="256" r="46" fill="url(#cleoh)" />
+</svg>

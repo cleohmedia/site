@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Cleoh">
+  <defs>
+    <linearGradient id="cleohTile" x1="0.05" y1="0.95" x2="0.95" y2="0.05">
+      <stop offset="0%" stop-color="#a94700" />
+      <stop offset="100%" stop-color="#5847b7" />
+    </linearGradient>
+  </defs>
+
+  <!-- Filled tile, and two streams where logo.svg has three: at 16px a third
+       stroke merges into the others and the mark turns to mush. -->
+  <rect width="512" height="512" rx="116" fill="url(#cleohTile)" />
+
+  <g fill="none" stroke="#fff" stroke-width="46" stroke-linecap="round">
+    <path d="M128 156 C 236 156, 240 256, 300 256" />
+    <path d="M128 356 C 236 356, 240 256, 300 256" />
+  </g>
+  <circle cx="374" cy="256" r="54" fill="#fff" />
+</svg>
