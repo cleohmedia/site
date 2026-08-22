@@ -147,6 +147,27 @@ task :check do
     check.("#{f} contains literal copy: #{stray.uniq.first(5).join(', ')}", stray.empty?)
   end
 
+# Code is written in English, exclusively — identifiers never carry Spanish.
+# A full lexical check isn't practical, but these two catch the real failure
+# modes: an accented identifier, and a half-finished rename that leaves an
+# href pointing at an id that no longer exists.
+built.each do |f|
+  html = File.read(f)
+
+  ids   = html.scan(/\bid="([^"]+)"/).flatten
+  names = ids + html.scan(/\bhref="#([^"]+)"/).flatten + html.scan(/\bclass="([^"]*)"/).flatten
+
+  names.each do |n|
+    check.("#{f}: non-ASCII identifier #{n.inspect} — code must be English", n.ascii_only?)
+  end
+
+  html.scan(/\bhref="#([^"]+)"/).flatten.uniq.each do |target|
+    next if target == "top" && ids.include?("top")
+    check.("#{f}: href=\"##{target}\" has no matching id — broken or half-renamed anchor",
+           ids.include?(target))
+  end
+end
+
   if failures.empty?
     puts "check: all #{locales.size}-locale structural assertions passed"
   else
