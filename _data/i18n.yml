@@ -1,0 +1,207 @@
+# Every user-visible string on the site. Templates contain no copy.
+#
+# Adding a language: append an entry to `locales`, add a top-level block with
+# the same keys as `es`, create the stub page, and add an OG card SVG. No
+# template changes are required — head.html, lang-switch.html and the Rakefile
+# all derive their behaviour from this list.
+
+locales:
+  - code: es
+    path: /
+    label: ES
+    html_lang: es-AR
+    og_locale: es_AR
+    default: true
+  - code: en
+    path: /en/
+    label: EN
+    html_lang: en
+    og_locale: en_US
+
+contact_email: hola@cleohmedia.com
+
+es:
+  page_title: "Cleoh · Inteligencia de medios"
+  meta_description: >-
+    Cleoh captura lo que se publica en medios, redes y sitios públicos, lo
+    convierte en inteligencia y lo distribuye a los equipos de comunicación
+    que tienen que actuar.
+
+  nav:
+    aria_label: Navegación principal
+    layers: Cómo funciona
+    audience: Para quién
+    contact: Contacto
+
+  hero:
+    badge: Plataforma de inteligencia de medios
+    headline_lead: Demasiada información.
+    headline_highlight: Muy poca inteligencia.
+    lead: >-
+      Cleoh captura lo que se publica en medios, redes y sitios públicos, lo
+      convierte en inteligencia y lo pone donde tu equipo puede actuar.
+    caption: Construido en Buenos Aires para equipos de comunicación.
+
+  layers:
+    eyebrow: Cómo funciona
+    headline_lead: "Cuatro capas, una sola pregunta:"
+    headline_highlight: ¿qué necesitás saber?
+    lead: >-
+      No alcanza con elegir fuentes. En Cleoh también configurás intereses, y
+      el sistema trabaja para vos — no al revés.
+    items:
+      - number: "01"
+        icon: antenna
+        title: Captura
+        tagline: Todo lo público, en un solo lugar.
+        body: >-
+          Cleoh está diseñado para escuchar donde se publica: medios, sitios
+          web, y las redes donde hoy se construye sentido — X, Instagram,
+          TikTok, YouTube, LinkedIn — más cualquier otra fuente pública que te
+          importe.
+      - number: "02"
+        icon: layers
+        title: Inteligencia
+        tagline: De miles de publicaciones a un puñado de hechos.
+        body: >-
+          Extraemos el texto real, detectamos duplicados y casi-duplicados, y
+          reunimos las apariciones de una misma historia. Lo que te llega no es
+          un feed más largo: es lo que pasó, contado una vez, con todas sus
+          fuentes.
+      - number: "03"
+        icon: send
+        title: Distribución
+        tagline: La información va hacia vos.
+        body: >-
+          Lo que importa llega a quien tiene que leerlo, en el momento en que
+          sirve, sin que nadie tenga que abrir una herramienta más.
+      - number: "04"
+        icon: message
+        title: Comunicación
+        badge: Próxima capa
+        tagline: Escuchar es la mitad. La otra es responder.
+        body: >-
+          La cuarta capa cierra el ciclo: del monitoreo a la acción, en el
+          mismo lugar donde entendiste qué estaba pasando.
+
+  audience:
+    eyebrow: Para quién
+    headline_lead: Para el área de comunicación
+    headline_highlight: que tiene que saber antes.
+    pro:
+      title: Equipos de comunicación y agencias
+      body: >-
+        Cobertura, reputación, competencia y contexto en un solo lugar.
+        Inteligencia sobre lo que se publica, y las herramientas para responder
+        cuando hace falta.
+    free:
+      title: Y para cualquiera que quiera entender
+      body: >-
+        Debajo del motor profesional hay una capa gratuita: elegís tus fuentes
+        y tus intereses, y recibís lo que importa. La misma captura, la misma
+        inteligencia.
+
+  closing:
+    headline: Estamos construyendo Cleoh.
+    body: >-
+      Si trabajás en comunicación y algo de esto te resuena, queremos
+      escucharte.
+    contact_label: Escribinos
+
+  footer:
+    rights: Cleoh Media. Todos los derechos reservados.
+
+  not_found:
+    title: Esta página no existe.
+    home: Volver al inicio
+
+en:
+  page_title: "Cleoh · Media intelligence"
+  meta_description: >-
+    Cleoh captures what gets published across media, social networks and public
+    sites, turns it into intelligence, and distributes it to the communications
+    teams that have to act.
+
+  nav:
+    aria_label: Main navigation
+    layers: How it works
+    audience: Who it's for
+    contact: Contact
+
+  hero:
+    badge: Media intelligence platform
+    headline_lead: Too much information.
+    headline_highlight: Too little intelligence.
+    lead: >-
+      Cleoh captures what gets published across media, social networks and
+      public sites, turns it into intelligence, and puts it where your team can
+      act.
+    caption: Built in Buenos Aires for communications teams.
+
+  layers:
+    eyebrow: How it works
+    headline_lead: "Four layers, one question:"
+    headline_highlight: what do you need to know?
+    lead: >-
+      Choosing sources isn't enough. In Cleoh you configure interests too, and
+      the system works for you — not the other way around.
+    items:
+      - number: "01"
+        icon: antenna
+        title: Capture
+        tagline: Everything public, in one place.
+        body: >-
+          Cleoh is designed to listen where publishing happens: media,
+          websites, and the networks where meaning is built today — X,
+          Instagram, TikTok, YouTube, LinkedIn — plus any other public source
+          that matters to you.
+      - number: "02"
+        icon: layers
+        title: Intelligence
+        tagline: From thousands of publications to a handful of facts.
+        body: >-
+          We extract the actual text, detect duplicates and near-duplicates,
+          and gather every appearance of the same story. What reaches you isn't
+          a longer feed: it's what happened, told once, with all its sources.
+      - number: "03"
+        icon: send
+        title: Distribution
+        tagline: The information comes to you.
+        body: >-
+          What matters reaches the person who needs to read it, when it's
+          useful, without anyone having to open one more tool.
+      - number: "04"
+        icon: message
+        title: Communication
+        badge: Next layer
+        tagline: Listening is half of it. Answering is the other half.
+        body: >-
+          The fourth layer closes the loop: from monitoring to acting, in the
+          same place where you understood what was going on.
+
+  audience:
+    eyebrow: Who it's for
+    headline_lead: For the communications team
+    headline_highlight: that has to know first.
+    pro:
+      title: Communications teams and agencies
+      body: >-
+        Coverage, reputation, competitors and context in one place.
+        Intelligence about what's being published, and the tools to respond
+        when you need to.
+    free:
+      title: And for anyone who wants to understand
+      body: >-
+        Underneath the professional engine there's a free layer: choose your
+        sources and your interests, and get what matters. The same capture, the
+        same intelligence.
+
+  closing:
+    headline: We're building Cleoh.
+    body: >-
+      If you work in communications and any of this resonates, we want to hear
+      from you.
+    contact_label: Write to us
+
+  footer:
+    rights: Cleoh Media. All rights reserved.
