@@ -20,14 +20,14 @@
                                              {% if item.badge %}bg-base-200 text-base-content/50{% else %}brand-gradient text-primary-content{% endif %}">
                 {%- include icons/{{ item.icon }}.svg -%}
               </div>
-              <span aria-hidden="true" class="font-bold text-2xl tabular-nums text-base-content/20">{{ item.number }}</span>
+              <span aria-hidden="true" class="font-bold text-2xl tabular-nums text-base-content/60">{{ item.number }}</span>
             </div>
 
             <div class="flex flex-col gap-2 {% if item.badge %}text-base-content/70{% endif %}">
               <div class="flex flex-wrap items-center gap-3">
                 <h3 class="font-semibold text-xl text-base-content">{{ item.title }}</h3>
                 {%- if item.badge -%}
-                  <span class="badge badge-sm badge-outline text-base-content/60">{{ item.badge }}</span>
+                  <span class="badge badge-sm badge-outline text-base-content/70">{{ item.badge }}</span>
                 {%- endif -%}
               </div>
               <p class="font-medium text-base-content/90">{{ item.tagline }}</p>
