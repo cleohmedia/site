@@ -4,4 +4,30 @@ lang: es
 permalink: /
 ---
 
-<main class="p-8"><h1 class="text-2xl font-bold">Cleoh</h1></main>
+<script>
+  (function () {
+    // 1. `?lang=es` means the user is overriding their browser default.
+    //    Persist that and stay here.
+    if (location.search.indexOf('lang=es') !== -1) {
+      try { localStorage.setItem('lang', 'es'); } catch (e) {}
+      return;
+    }
+    // 2. Honor any prior persisted choice.
+    var stored = null;
+    try { stored = localStorage.getItem('lang'); } catch (e) {}
+    if (stored === 'en') { location.replace('/en/'); return; }
+    if (stored === 'es') { return; }
+    // 3. No stored choice — fall back to browser language.
+    var nav = (navigator.language || '').toLowerCase();
+    if (nav.indexOf('en') === 0) { location.replace('/en/'); }
+  })();
+</script>
+
+{%- include navbar.html -%}
+<main>
+  {%- include hero.html -%}
+  {%- include layers.html -%}
+  {%- include audience.html -%}
+  {%- include closing.html -%}
+</main>
+{%- include footer.html -%}

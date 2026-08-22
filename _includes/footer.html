@@ -1,0 +1,10 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<footer class="border-t border-base-300 bg-base-100">
+  <div class="max-w-6xl mx-auto px-6 py-8 flex flex-col sm:flex-row items-center sm:items-end justify-between gap-4">
+    <div class="flex items-center gap-2 text-sm text-base-content/60">
+      <img src="{{ '/assets/images/logo.svg' | asset_digest }}" alt="" width="20" height="20" class="w-5 h-5">
+      <span>&copy; {{ site.time | date: "%Y" }} {{ t.footer.rights }}</span>
+    </div>
+    {%- include lang-switch.html -%}
+  </div>
+</footer>

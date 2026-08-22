@@ -1,0 +1,24 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<section id="para-quien" class="bg-base-200 py-20 scroll-mt-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-12 flex flex-col gap-4">
+      <p class="text-sm uppercase tracking-[0.2em]"><span class="brand-text-gradient">{{ t.audience.eyebrow }}</span></p>
+      <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-balance">
+        {{ t.audience.headline_lead }}
+        <span class="brand-text-gradient">{{ t.audience.headline_highlight }}</span>
+      </h2>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-5 gap-6 items-start">
+      <article class="md:col-span-3 bg-base-100 border border-base-300 rounded-box p-8 shadow-sm flex flex-col gap-3">
+        <h3 class="font-semibold text-xl text-base-content">{{ t.audience.pro.title }}</h3>
+        <p class="text-base-content/70">{{ t.audience.pro.body }}</p>
+      </article>
+
+      <article class="md:col-span-2 rounded-box p-8 flex flex-col gap-3">
+        <h3 class="font-semibold text-lg text-base-content/80">{{ t.audience.free.title }}</h3>
+        <p class="text-base-content/60 text-sm">{{ t.audience.free.body }}</p>
+      </article>
+    </div>
+  </div>
+</section>

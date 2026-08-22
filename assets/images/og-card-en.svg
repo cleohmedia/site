@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630">
+  <defs>
+    <linearGradient id="brand" x1="0.05" y1="0.95" x2="0.95" y2="0.05">
+      <stop offset="0%"   stop-color="#a94700"/>
+      <stop offset="100%" stop-color="#5847b7"/>
+    </linearGradient>
+    <!-- The mark needs userSpaceOnUse: its middle stroke is a perfectly
+         horizontal line, whose objectBoundingBox has zero height, and an
+         element with a zero-height bbox is not rendered under
+         objectBoundingBox paint. Coordinates are in the mark's own 512 space. -->
+    <linearGradient id="markGrad" gradientUnits="userSpaceOnUse" x1="26" y1="486" x2="486" y2="26">
+      <stop offset="0%"   stop-color="#a94700"/>
+      <stop offset="100%" stop-color="#5847b7"/>
+    </linearGradient>
+    <radialGradient id="glow" cx="90%" cy="10%" r="75%">
+      <stop offset="0%"   stop-color="#5847b7" stop-opacity="0.14"/>
+      <stop offset="55%"  stop-color="#a94700" stop-opacity="0.05"/>
+      <stop offset="100%" stop-color="#ffffff" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="#ffffff"/>
+  <rect width="1200" height="630" fill="url(#glow)"/>
+  <rect x="0" y="0" width="1200" height="8" fill="url(#brand)"/>
+
+  <g transform="translate(95 185) scale(0.48)">
+    <g fill="none" stroke="url(#markGrad)" stroke-width="34" stroke-linecap="round">
+      <path d="M112 148 C 214 148, 232 256, 322 256"/>
+      <path d="M112 256 L 322 256"/>
+      <path d="M112 364 C 214 364, 232 256, 322 256"/>
+    </g>
+    <circle cx="368" cy="256" r="46" fill="url(#markGrad)"/>
+  </g>
+
+  <text x="345" y="245" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'DejaVu Sans', system-ui, sans-serif" font-size="46" font-weight="700" letter-spacing="-1" fill="#3d2418">Too much information.</text>
+  <text x="345" y="309" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'DejaVu Sans', system-ui, sans-serif" font-size="46" font-weight="800" letter-spacing="-1" fill="url(#brand)">Too little intelligence.</text>
+  <text x="345" y="372" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'DejaVu Sans', system-ui, sans-serif" font-size="25" font-weight="500" fill="#6b5a4e">Media intelligence for communications teams.</text>
+  <text x="345" y="437" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'DejaVu Sans', system-ui, sans-serif" font-size="24" font-weight="700" letter-spacing="0.5" fill="#a94700">cleohmedia.com</text>
+
+  <rect x="0" y="622" width="1200" height="8" fill="url(#brand)"/>
+</svg>

@@ -1,10 +1,8 @@
 <!DOCTYPE html>
-<html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <link rel="stylesheet" href="{{ '/assets/css/site.css' | asset_digest }}">
-  </head>
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign loc = site.data.i18n.locales | where: "code", page.lang | first -%}
+<html lang="{{ loc.html_lang }}">
+  {%- include head.html -%}
   <body class="min-h-dvh bg-base-100 text-base-content antialiased">
     {{ content }}
   </body>

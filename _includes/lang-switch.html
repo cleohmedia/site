@@ -1,0 +1,21 @@
+{%- comment -%}
+  Language switch, driven entirely by `site.data.i18n.locales`. The current
+  locale renders as text; the others as links. The default locale's href
+  carries `?lang=` so clicking it overrides a stored preference rather than
+  being bounced straight back by index.html's redirect script.
+{%- endcomment -%}
+<nav class="text-xs flex gap-3" aria-label="Language">
+  {%- for l in site.data.i18n.locales -%}
+    {%- if l.code == page.lang -%}
+      <span class="font-semibold text-base-content/80" aria-current="page">{{ l.label }}</span>
+    {%- else -%}
+      {%- if l.default -%}
+        {%- assign href = l.path | append: '?lang=' | append: l.code -%}
+      {%- else -%}
+        {%- assign href = l.path -%}
+      {%- endif -%}
+      <a class="text-base-content/70 hover:text-base-content transition-colors"
+         href="{{ href }}" hreflang="{{ l.code }}">{{ l.label }}</a>
+    {%- endif -%}
+  {%- endfor -%}
+</nav>

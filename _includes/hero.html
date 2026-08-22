@@ -1,0 +1,24 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<section class="relative overflow-hidden">
+  <div aria-hidden="true" class="absolute inset-0 -z-10 bg-gradient-to-b from-base-100 via-base-200 to-base-100"></div>
+
+  <div class="max-w-4xl mx-auto px-6 pt-20 pb-24 text-center flex flex-col items-center gap-8">
+    <span class="inline-flex items-center gap-2 rounded-full bg-base-100 border border-base-300 px-4 py-1.5 text-xs sm:text-sm text-base-content/80 shadow-sm">
+      {{ t.hero.badge }}
+    </span>
+
+    <div class="flex flex-col items-center gap-4">
+      <img src="{{ '/assets/images/logo.svg' | asset_digest }}" alt="" width="128" height="128" class="w-24 sm:w-32 h-auto" aria-hidden="true">
+      <span class="font-bold text-5xl sm:text-6xl tracking-tight leading-none brand-text-gradient">Cleoh</span>
+    </div>
+
+    <h1 class="font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-balance">
+      <span class="text-base-content">{{ t.hero.headline_lead }}</span>
+      <span class="brand-text-gradient">{{ t.hero.headline_highlight }}</span>
+    </h1>
+
+    <p class="max-w-2xl text-base-content/70 text-balance text-base sm:text-lg">{{ t.hero.lead }}</p>
+
+    <p class="text-xs text-base-content/60">{{ t.hero.caption }}</p>
+  </div>
+</section>

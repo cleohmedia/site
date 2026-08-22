@@ -1,0 +1,64 @@
+name: Deploy site
+
+on:
+  push:
+    branches: [master]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+
+      - uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: "ruby"   # latest stable; never pin
+          bundler-cache: true
+
+      - uses: actions/configure-pages@v6
+
+      - name: Install renderers
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends librsvg2-bin imagemagick
+
+      - name: Build CSS
+        run: bundle exec tailwindcss -i assets/css/tailwind.css -o assets/css/site.css --minify
+
+      - name: Render OG cards
+        run: bundle exec rake og:build
+
+      - name: Render favicon and app icons
+        run: |
+          bundle exec rake favicon:build
+          bundle exec rake icons:build
+
+      - name: Build Jekyll
+        run: bundle exec jekyll build
+        env:
+          JEKYLL_ENV: production
+
+      - name: Verify the spec's structural guarantees
+        run: bundle exec rake check
+
+      - uses: actions/upload-pages-artifact@v5
+        with:
+          path: _site
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

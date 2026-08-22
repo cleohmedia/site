@@ -1,0 +1,20 @@
+---
+layout: default
+lang: en
+permalink: /en/
+---
+
+<script>
+  // Persist English preference so future visits to `/` don't bounce
+  // English-speaking users who arrived directly at /en/ (or who toggled).
+  try { localStorage.setItem('lang', 'en'); } catch (e) {}
+</script>
+
+{%- include navbar.html -%}
+<main>
+  {%- include hero.html -%}
+  {%- include layers.html -%}
+  {%- include audience.html -%}
+  {%- include closing.html -%}
+</main>
+{%- include footer.html -%}

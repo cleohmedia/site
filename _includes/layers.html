@@ -1,0 +1,41 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<section id="capas" class="bg-base-100 py-20 scroll-mt-16">
+  <div class="max-w-5xl mx-auto px-6">
+    <div class="text-center max-w-2xl mx-auto mb-16 flex flex-col gap-4">
+      <p class="text-sm uppercase tracking-[0.2em]"><span class="brand-text-gradient">{{ t.layers.eyebrow }}</span></p>
+      <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-balance">
+        {{ t.layers.headline_lead }}
+        <span class="brand-text-gradient">{{ t.layers.headline_highlight }}</span>
+      </h2>
+      <p class="text-base-content/70 text-balance">{{ t.layers.lead }}</p>
+    </div>
+
+    <ol class="flex flex-col gap-6 list-none p-0 m-0">
+      {%- for item in t.layers.items -%}
+        <li>
+          <article class="relative rounded-box p-6 sm:p-8 flex flex-col sm:flex-row gap-6
+                          {% if item.badge %}border border-dashed border-base-300 bg-base-100{% else %}border border-base-300 bg-base-100 shadow-sm{% endif %}">
+            <div class="flex sm:flex-col items-center sm:items-start gap-4 sm:gap-3 shrink-0">
+              <div aria-hidden="true" class="size-12 rounded-xl grid place-items-center
+                                             {% if item.badge %}bg-base-200 text-base-content/50{% else %}brand-gradient text-primary-content{% endif %}">
+                {%- include icons/{{ item.icon }}.svg -%}
+              </div>
+              <span aria-hidden="true" class="font-bold text-2xl tabular-nums text-base-content/20">{{ item.number }}</span>
+            </div>
+
+            <div class="flex flex-col gap-2 {% if item.badge %}text-base-content/70{% endif %}">
+              <div class="flex flex-wrap items-center gap-3">
+                <h3 class="font-semibold text-xl text-base-content">{{ item.title }}</h3>
+                {%- if item.badge -%}
+                  <span class="badge badge-sm badge-outline text-base-content/60">{{ item.badge }}</span>
+                {%- endif -%}
+              </div>
+              <p class="font-medium text-base-content/90">{{ item.tagline }}</p>
+              <p class="text-base-content/70">{{ item.body }}</p>
+            </div>
+          </article>
+        </li>
+      {%- endfor -%}
+    </ol>
+  </div>
+</section>

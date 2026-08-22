@@ -4,3 +4,10 @@ _site/
 vendor/bundle/
 assets/css/site.css
 .DS_Store
+
+# Rendered at build time by `rake og:build` / `favicon:build` / `icons:build`.
+# Sources (the .svg files) are tracked; these are not.
+assets/images/og-card-*.png
+assets/images/favicon.png
+assets/images/apple-touch.png
+assets/images/icons/

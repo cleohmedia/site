@@ -1,0 +1,50 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+{%- assign loc = site.data.i18n.locales | where: "code", page.lang | first -%}
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="theme-color" content="#a94700">
+
+  <title>{{ t.page_title }}</title>
+  <meta name="description" content="{{ t.meta_description }}">
+
+  <link rel="canonical" href="{{ page.url | absolute_url }}">
+
+  {%- comment -%} hreflang alternates, derived from the locale list {%- endcomment -%}
+  {%- for l in site.data.i18n.locales -%}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ l.path | absolute_url }}">
+  {%- endfor -%}
+  {%- assign default_loc = site.data.i18n.locales | where: "default", true | first -%}
+  <link rel="alternate" hreflang="x-default" href="{{ default_loc.path | absolute_url }}">
+
+  {%- comment -%} Open Graph {%- endcomment -%}
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="{{ t.page_title }}">
+  <meta property="og:description" content="{{ t.meta_description }}">
+  <meta property="og:url" content="{{ page.url | absolute_url }}">
+  {%- assign og_card = '/assets/images/og-card-' | append: page.lang | append: '.png' -%}
+  <meta property="og:image" content="{{ og_card | asset_digest | absolute_url }}">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="{{ loc.og_locale }}">
+  {%- for l in site.data.i18n.locales -%}
+    {%- unless l.code == page.lang -%}
+  <meta property="og:locale:alternate" content="{{ l.og_locale }}">
+    {%- endunless -%}
+  {%- endfor -%}
+  <meta property="og:site_name" content="Cleoh Media">
+
+  {%- comment -%} Twitter card {%- endcomment -%}
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="{{ t.page_title }}">
+  <meta name="twitter:description" content="{{ t.meta_description }}">
+  <meta name="twitter:image" content="{{ og_card | asset_digest | absolute_url }}">
+
+  {%- comment -%} Icons {%- endcomment -%}
+  <link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | asset_digest }}">
+  <link rel="icon" type="image/png" href="{{ '/assets/images/favicon.png' | asset_digest }}">
+  <link rel="apple-touch-icon" href="{{ '/assets/images/apple-touch.png' | asset_digest }}">
+
+  {%- comment -%} Stylesheet (built by CI / `rake css:build`) {%- endcomment -%}
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | asset_digest }}">
+</head>

@@ -1,0 +1,14 @@
+{%- assign t = site.data.i18n[page.lang] -%}
+<section class="py-20">
+  <div class="max-w-6xl mx-auto px-6">
+    <div class="bg-neutral text-neutral-content rounded-box px-6 py-16 sm:px-12 text-center flex flex-col items-center gap-6 ring-1 ring-base-content/5">
+      <h2 class="font-bold text-3xl sm:text-4xl md:text-5xl tracking-tight text-balance">{{ t.closing.headline }}</h2>
+      <p class="max-w-xl text-neutral-content/80 text-balance">{{ t.closing.body }}</p>
+      <p class="flex flex-col sm:flex-row items-center gap-2 text-neutral-content/70">
+        <span>{{ t.closing.contact_label }}</span>
+        <a href="mailto:{{ site.data.i18n.contact_email }}"
+           class="font-semibold text-neutral-content underline underline-offset-4 decoration-neutral-content/40 hover:decoration-neutral-content transition-colors">{{ site.data.i18n.contact_email }}</a>
+      </p>
+    </div>
+  </div>
+</section>

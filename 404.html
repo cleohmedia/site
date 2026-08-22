@@ -1,0 +1,15 @@
+---
+layout: default
+lang: es
+permalink: /404.html
+---
+
+{%- assign t = site.data.i18n[page.lang] -%}
+<main class="min-h-dvh grid place-items-center px-6">
+  <div class="text-center flex flex-col items-center gap-6">
+    <img src="{{ '/assets/images/logo.svg' | asset_digest }}" alt="Cleoh" width="72" height="72" class="w-16 h-auto">
+    <p class="font-bold text-5xl tracking-tight brand-text-gradient">404</p>
+    <h1 class="font-semibold text-xl text-base-content">{{ t.not_found.title }}</h1>
+    <a href="/" class="text-base-content/70 hover:text-base-content underline underline-offset-4 transition-colors">{{ t.not_found.home }}</a>
+  </div>
+</main>
