@@ -1,0 +1,12 @@
+@import "tailwindcss" source(none);
+@source "../../_layouts";
+@source "../../_includes";
+@source "../../index.html";
+@source "../../en";
+@source "../../404.html";
+
+/* daisyUI with no bundled themes — Task 2 defines the Cleoh palette as the
+   single source of truth. */
+@plugin "../../vendor/daisyui.js" {
+  themes: false;
+}

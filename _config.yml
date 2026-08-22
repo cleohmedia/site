@@ -1,0 +1,27 @@
+title: Cleoh Media
+description: Inteligencia de medios para equipos de comunicación
+url: https://cleohmedia.com
+
+# No gems beyond Jekyll itself; `_plugins/` is loaded automatically.
+
+# Files Jekyll must not copy into _site.
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - docs/
+  - vendor/
+  - assets/css/tailwind.css
+  - .github/
+  - .bundle/
+
+permalink: pretty
+
+keep_files:
+  - assets/css/site.css   # CI writes this before jekyll runs; don't blow it away
+
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
