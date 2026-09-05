@@ -5,6 +5,9 @@
       <img src="{{ '/assets/images/logo.svg' | asset_digest }}" alt="" width="20" height="20" class="w-5 h-5">
       <span>&copy; {{ site.time | date: "%Y" }} {{ t.footer.rights }}</span>
     </div>
-    {%- include lang-switch.html -%}
+    <div class="flex items-center gap-5">
+      <a href="{{ t.privacy.path }}" class="text-xs text-base-content/70 hover:text-base-content transition-colors">{{ t.footer.privacy }}</a>
+      {%- include lang-switch.html -%}
+    </div>
   </div>
 </footer>

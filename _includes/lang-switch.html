@@ -9,10 +9,12 @@
     {%- if l.code == page.lang -%}
       <span class="font-semibold text-base-content/80" aria-current="page">{{ l.label }}</span>
     {%- else -%}
+      {%- assign target = l.path -%}
+      {%- if page.alt -%}{%- assign target = page.alt[l.code] | default: l.path -%}{%- endif -%}
       {%- if l.default -%}
-        {%- assign href = l.path | append: '?lang=' | append: l.code -%}
+        {%- assign href = target | append: '?lang=' | append: l.code -%}
       {%- else -%}
-        {%- assign href = l.path -%}
+        {%- assign href = target -%}
       {%- endif -%}
       <a class="text-base-content/70 hover:text-base-content transition-colors"
          href="{{ href }}" hreflang="{{ l.code }}">{{ l.label }}</a>

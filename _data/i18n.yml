@@ -110,10 +110,67 @@ es:
 
   footer:
     rights: Cleoh Media. Todos los derechos reservados.
+    privacy: Privacidad
 
   not_found:
     title: Esta página no existe.
     home: Volver al inicio
+
+  privacy:
+    path: /privacidad/
+    page_title: "Cleoh · Privacidad"
+    meta_description: >-
+      Qué datos guarda Cleoh, qué correos envía y cómo podés controlarlos.
+    title: Privacidad y correo electrónico
+    updated: "Última actualización: 2 de septiembre de 2026"
+    intro: >-
+      Cleoh Media ("Cleoh") es una plataforma de inteligencia de medios para
+      equipos de comunicación. Esta página explica qué datos guardamos, qué
+      correos enviamos y cómo podés controlarlos.
+    contact_label: "Consultas sobre privacidad:"
+    sections:
+      - title: Qué datos guardamos
+        items:
+          - Tu dirección de correo electrónico, que usás para iniciar sesión.
+          - Las fuentes y los intereses que configurás en la aplicación.
+          - >-
+            Registros técnicos mínimos, como fecha y hora de acceso, necesarios
+            para operar y proteger el servicio.
+      - title: Qué correos enviamos
+        body: >-
+          Solo enviamos correos transaccionales, es decir, mensajes que vos
+          mismo iniciás desde la aplicación:
+        items:
+          - Un enlace para iniciar sesión, cuando lo pedís desde el formulario de acceso.
+          - Una confirmación de cuenta, cuando te registrás.
+          - Una confirmación de cambio de dirección, cuando la modificás desde tu cuenta.
+        after: >-
+          No enviamos boletines, promociones ni publicidad. No compramos,
+          alquilamos ni importamos listas de direcciones, y solo escribimos a
+          direcciones registradas en Cleoh. Cada mensaje incluye una nota para
+          ignorarlo si no lo solicitaste.
+      - title: Cómo dejar de recibir correos
+        body: >-
+          Como no hay envíos automáticos ni de marketing, no hay nada de lo que
+          darse de baja: solo recibís un correo cuando lo pedís. Si un mensaje
+          rebota o es marcado como no deseado, dejamos de enviar a esa
+          dirección automáticamente. Si querés que eliminemos tu cuenta y tu
+          dirección, escribinos y lo haremos.
+      - title: Dónde se alojan los datos
+        body: >-
+          Los datos se alojan en Amazon Web Services, en la región de San Pablo
+          (Brasil). Los correos se envían mediante Amazon SES desde el dominio
+          cleohmedia.com, autenticado con SPF, DKIM y DMARC.
+      - title: Con quién compartimos datos
+        body: >-
+          Con nadie. No vendemos ni cedemos datos personales a terceros. Solo
+          usamos proveedores de infraestructura para alojar el servicio y
+          enviar correo.
+      - title: Cookies
+        body: >-
+          Este sitio no usa cookies ni servicios de terceros; solo guarda tu
+          preferencia de idioma en tu navegador. La aplicación usa una cookie
+          de sesión, necesaria para mantenerte conectado.
 
 en:
   page_title: "Cleoh · Media intelligence"
@@ -205,3 +262,60 @@ en:
 
   footer:
     rights: Cleoh Media. All rights reserved.
+    privacy: Privacy
+
+  privacy:
+    path: /en/privacy/
+    page_title: "Cleoh · Privacy"
+    meta_description: >-
+      What data Cleoh keeps, what email it sends, and how you control it.
+    title: Privacy and email
+    updated: "Last updated: September 2, 2026"
+    intro: >-
+      Cleoh Media ("Cleoh") is a media intelligence platform for communications
+      teams. This page explains what data we keep, what email we send, and how
+      you can control it.
+    contact_label: "Privacy questions:"
+    sections:
+      - title: What data we keep
+        items:
+          - Your email address, which you use to sign in.
+          - The sources and interests you configure in the application.
+          - >-
+            Minimal technical records, such as access date and time, needed to
+            operate and protect the service.
+      - title: What email we send
+        body: >-
+          We send transactional email only, meaning messages you yourself
+          trigger from the application:
+        items:
+          - A sign-in link, when you request one from the sign-in form.
+          - An account confirmation, when you register.
+          - An address-change confirmation, when you change it from your account.
+        after: >-
+          We send no newsletters, promotions or advertising. We do not buy,
+          rent or import address lists, and we only write to addresses
+          registered in Cleoh. Every message includes a note to ignore it if
+          you did not request it.
+      - title: How to stop receiving email
+        body: >-
+          Since there is no automated or marketing email, there is nothing to
+          unsubscribe from: you only receive a message when you ask for one. If
+          a message bounces or is marked as unwanted, we automatically stop
+          sending to that address. If you want your account and address
+          deleted, write to us and we will do it.
+      - title: Where data is hosted
+        body: >-
+          Data is hosted on Amazon Web Services in the São Paulo (Brazil)
+          region. Email is sent through Amazon SES from the cleohmedia.com
+          domain, authenticated with SPF, DKIM and DMARC.
+      - title: Who we share data with
+        body: >-
+          No one. We do not sell or hand personal data to third parties. We
+          only use infrastructure providers to host the service and send
+          email.
+      - title: Cookies
+        body: >-
+          This site uses no cookies and no third-party services; it only stores
+          your language preference in your browser. The application uses a
+          session cookie, required to keep you signed in.

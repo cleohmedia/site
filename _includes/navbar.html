@@ -1,4 +1,5 @@
 {%- assign t = site.data.i18n[page.lang] -%}
+{%- assign loc = site.data.i18n.locales | where: "code", page.lang | first -%}
 <header id="top" class="sticky top-0 z-40 bg-base-100/80 backdrop-blur border-b border-base-300">
   <div class="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between gap-4">
     <a href="#top" class="flex items-center gap-2 font-semibold text-base-content">
@@ -7,8 +8,8 @@
     </a>
 
     <nav class="hidden md:flex items-center gap-8 text-sm" aria-label="{{ t.nav.aria_label }}">
-      <a href="#layers" class="text-base-content/70 hover:text-base-content transition-colors">{{ t.nav.layers }}</a>
-      <a href="#audience" class="text-base-content/70 hover:text-base-content transition-colors">{{ t.nav.audience }}</a>
+      <a href="{{ loc.path }}#layers" class="text-base-content/70 hover:text-base-content transition-colors">{{ t.nav.layers }}</a>
+      <a href="{{ loc.path }}#audience" class="text-base-content/70 hover:text-base-content transition-colors">{{ t.nav.audience }}</a>
       <a href="mailto:{{ site.data.i18n.contact_email }}" class="text-base-content/70 hover:text-base-content transition-colors">{{ t.nav.contact }}</a>
     </nav>
 
@@ -17,8 +18,8 @@
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
       </summary>
       <ul class="dropdown-content menu bg-base-100 border border-base-300 rounded-box shadow mt-2 w-52 p-2">
-        <li><a href="#layers">{{ t.nav.layers }}</a></li>
-        <li><a href="#audience">{{ t.nav.audience }}</a></li>
+        <li><a href="{{ loc.path }}#layers">{{ t.nav.layers }}</a></li>
+        <li><a href="{{ loc.path }}#audience">{{ t.nav.audience }}</a></li>
         <li><a href="mailto:{{ site.data.i18n.contact_email }}">{{ t.nav.contact }}</a></li>
       </ul>
     </details>

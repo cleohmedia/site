@@ -1,26 +1,35 @@
 {%- assign t = site.data.i18n[page.lang] -%}
 {%- assign loc = site.data.i18n.locales | where: "code", page.lang | first -%}
+{%- comment -%} Sub-pages carry `section`; their copy lives under t[section]. {%- endcomment -%}
+{%- assign p = t -%}
+{%- if page.section -%}{%- assign p = t[page.section] -%}{%- endif -%}
+{%- assign title = p.page_title | default: t.page_title -%}
+{%- assign desc = p.meta_description | default: t.meta_description -%}
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <meta name="theme-color" content="#a94700">
 
-  <title>{{ t.page_title }}</title>
-  <meta name="description" content="{{ t.meta_description }}">
+  <title>{{ title }}</title>
+  <meta name="description" content="{{ desc }}">
 
   <link rel="canonical" href="{{ page.url | absolute_url }}">
 
   {%- comment -%} hreflang alternates, derived from the locale list {%- endcomment -%}
   {%- for l in site.data.i18n.locales -%}
-  <link rel="alternate" hreflang="{{ l.code }}" href="{{ l.path | absolute_url }}">
+    {%- assign alt = l.path -%}
+    {%- if page.alt -%}{%- assign alt = page.alt[l.code] | default: l.path -%}{%- endif -%}
+  <link rel="alternate" hreflang="{{ l.code }}" href="{{ alt | absolute_url }}">
   {%- endfor -%}
   {%- assign default_loc = site.data.i18n.locales | where: "default", true | first -%}
-  <link rel="alternate" hreflang="x-default" href="{{ default_loc.path | absolute_url }}">
+  {%- assign xdefault = default_loc.path -%}
+  {%- if page.alt -%}{%- assign xdefault = page.alt[default_loc.code] | default: default_loc.path -%}{%- endif -%}
+  <link rel="alternate" hreflang="x-default" href="{{ xdefault | absolute_url }}">
 
   {%- comment -%} Open Graph {%- endcomment -%}
   <meta property="og:type" content="website">
-  <meta property="og:title" content="{{ t.page_title }}">
-  <meta property="og:description" content="{{ t.meta_description }}">
+  <meta property="og:title" content="{{ title }}">
+  <meta property="og:description" content="{{ desc }}">
   <meta property="og:url" content="{{ page.url | absolute_url }}">
   {%- assign og_card = '/assets/images/og-card-' | append: page.lang | append: '.png' -%}
   <meta property="og:image" content="{{ og_card | asset_digest | absolute_url }}">
@@ -36,8 +45,8 @@
 
   {%- comment -%} Twitter card {%- endcomment -%}
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="{{ t.page_title }}">
-  <meta name="twitter:description" content="{{ t.meta_description }}">
+  <meta name="twitter:title" content="{{ title }}">
+  <meta name="twitter:description" content="{{ desc }}">
   <meta name="twitter:image" content="{{ og_card | asset_digest | absolute_url }}">
 
   {%- comment -%} Icons {%- endcomment -%}
